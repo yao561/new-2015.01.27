@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1426495891 source:c:\users\gs\documents\github\new-mcs-pso\mcs-de 30\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<cstdio>
+	<algorithm>
+	<cstring>
+	<cmath>
+
