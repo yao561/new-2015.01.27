@@ -7,14 +7,14 @@
 #include <cmath>
 #include <set>
 
-#define particle_num 200
-#define dim 2
-#define xmax 1000
-#define xmin -1000
+#define particle_num 20
+#define dim 30
+#define xmax 100
+#define xmin -100
 #define vmax 20
 #define vmin -20
-#define iteration 100
-#define Phi 0.1
+#define iteration 1000
+#define Phi 0.3
 
 using namespace std;
 
@@ -73,7 +73,6 @@ void pairpair()//把粒子们随机排序，然后放到paired[]数组里面
     set<int>::iterator it;
     for(int i = 0; i < particle_num; i++)
         myset.insert(i);
-    memset(paired, 0, sizeof(paired));
     for(int i = 0; i < particle_num; i++)
     {
         it = myset.begin();
@@ -103,7 +102,6 @@ void update()
         double r1 = 1.0 * rand() / RAND_MAX;
         double r2 = 1.0 * rand() / RAND_MAX;
         double r3 = 1.0 * rand() / RAND_MAX;
-
         for(int j = 0 ; j < dim; j++)
         {
             v[loser][j] = r1 * v[loser][j]
@@ -125,12 +123,12 @@ void output()
     {
         cout << i << ' ' << fitness[i] << endl;
     }
-    for(int i = particle_num-3; i < particle_num; i++)
+    /*for(int i = particle_num-3; i < particle_num; i++)
     {
         cout << endl;
         for(int j = 0; j < dim; j++)
             cout << ' ' << x[i][j];
-    }
+    }*/
 }
 
 int main()
